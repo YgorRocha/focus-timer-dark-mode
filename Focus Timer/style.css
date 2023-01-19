@@ -1,0 +1,219 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'Sans Serif';
+    font-size: clamp(2rem, 4rem + 8vw, 8.5rem);    
+
+    Font-style: Medium;
+}
+:root{
+    font-size: 62.5%;
+}
+
+body{
+    position: relative;
+}
+
+.light-mode{
+    background: white;
+    color:hsla(240, 6%, 21%, 1);
+}
+
+.dark-mode{
+    background: hsla(240, 6%, 21%, 1);
+    color:white;
+}
+  
+.img-dark {
+    display: none;
+}
+
+.hide{
+    display: none;
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+}
+
+.switchMode{
+    display: inline;
+    position: fixed;
+    right: 6.4rem;
+    top: 0px;
+}
+
+.switchMode button:hover{
+    cursor: pointer;
+}
+
+.switchMode button{
+    background: none;
+    border: none;
+}
+
+
+.main{
+    gap: clamp(0.5rem, 9rem + 10vw, 23rem);
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    margin-left: 10px;
+    width: clamp(20rem, 70rem + 80vw, 81rem);
+}
+
+/*PAINEL DE CONTROLE MINUTOS E BUTTONS*/
+
+.set-up{
+    margin-top: 1rem;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+}
+   
+.buttonSet,
+ .play,
+ .stop,
+ .plus,
+ .minus,
+ .pause{
+    background: none;
+    border: none;
+    display: flex;
+    gap: 1.8rem;
+    justify-content: center;
+}
+
+.hide{
+    display: none;
+}
+
+.buttonSet img{
+    width: clamp(3rem, 3rem + 4vw, 5rem);    
+    transition: scale .3s;
+    margin-top: 1.5rem;
+}
+
+.buttonSet img:hover{
+ scale: 1.2;
+ cursor: pointer;
+}
+
+/*PAINEL DOS CARDS*/
+
+.cards {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.0rem;
+}
+.cards button{
+    border: none;
+}
+.modeRandom{
+    background: black;
+}
+
+.modo-escuro{
+ width: clamp(1rem, 3rem + 5vw, 10rem);
+
+}
+.modo-claro{
+    width: clamp(1rem, 3rem + 5vw, 10rem);
+}
+
+.florest,
+.rain,
+.coffee-shop,
+.fire{
+    border: none;
+    background: hsla(240, 9%, 89%, 1);
+    border-radius: 2.4rem;
+    width: clamp(4rem, 9rem + 15vw, 13rem);
+    height: clamp(6rem, 9rem + 12vh ,18.8rem);
+
+
+    position: relative;
+    transition: .5s all cubic-bezier(0, 0.56, 1, 0.59);
+} 
+
+/* MUDANÇA DE MODO LIGHT PARA DARK NOS CARDS */
+
+.cards button:hover{
+    cursor: pointer;
+    background: rgb(163,48,252);
+}
+
+.cards .btn-dark:hover{
+    background-color: rgb(15, 197, 188);
+}
+
+.pressed.active {
+background: linear-gradient(135deg, rgba(163,48,252,1) 17%, rgba(118,69,252,1) 40%, rgba(127,123,252,1) 67%, rgba(120,196,252,1) 89%);
+}
+.pressed.dark {
+    background: rgb(15, 197, 188);
+}
+
+.bgcolorDark{
+    background: #29292E;
+}
+.bgcolorLight{
+    background: hsla(240, 9%, 89%, 1);
+}
+
+.volume{
+    position: absolute;
+    display: flex;
+    scale: .8;
+    
+}
+
+/*   RESPONSIVE MAX-550    */
+
+@media (max-width: 550px){
+    .main{
+        margin-top: 60px;
+
+        gap: clamp(0.1rem, 2rem + 10vw, 23rem);
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        text-align: center;
+        width: clamp(5rem, 250rem + 300vw, 3rem);
+    }
+    .switchMode{
+        width: clamp(0rem, 5rem + 8vw, 15rem);    
+        position: fixed;
+        display: inline;
+        right: 42%;
+        left: 45%;
+        top: 0px;
+    }
+    .switchMode{
+        display: inline;
+        position: absolute;
+        right: 6.4rem;
+        top: 0px;
+    }
+
+       
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2.0rem;
+    }
+}
+@media (max-width: 470px){
+    
+    .volume{
+        position: absolute;
+        display: flex;
+        scale: .7;
+    }
+}
+        
+
+       
